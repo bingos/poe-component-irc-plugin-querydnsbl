@@ -1,0 +1,16 @@
+use strict;
+use inc::Module::Install;
+name 'POE-Component-IRC-Plugin-QueryDNSBL';
+author 'Chris Williams <chris@bingosnet.co.uk>';
+version_from 'lib/POE/Component/IRC/Plugin/QueryDNSBL.pm';
+abstract_from 'lib/POE/Component/IRC/Plugin/QueryDNSBL.pm';
+license 'perl';
+perl_version '5.006';
+build_requires 'Test::More' => 0.47;
+requires 'POE' => 1.004;
+requires 'POE::Component::IRC' => 5.70;
+requires 'POE::Component::IRC::Plugin' => 0.10;
+requires 'POE::Component::IRC::Common' => 5.16;
+requires 'POE::Component::Client::DNSBL' => 0.06;
+eval "auto_set_repository";
+WriteAll;
