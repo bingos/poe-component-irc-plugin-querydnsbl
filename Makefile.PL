@@ -7,6 +7,7 @@ abstract_from 'lib/POE/Component/IRC/Plugin/QueryDNSBL.pm';
 license 'perl';
 perl_version '5.006';
 build_requires 'Test::More' => 0.47;
+requires 'Net::IP' => 0;
 requires 'POE' => 1.004;
 requires 'POE::Component::IRC' => 5.70;
 requires 'POE::Component::IRC::Plugin' => 0.10;
