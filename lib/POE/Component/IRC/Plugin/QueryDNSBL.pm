@@ -1,14 +1,13 @@
 package POE::Component::IRC::Plugin::QueryDNSBL;
 
+#ABSTRACT: A POE::Component::IRC plugin for IRC based DNSBL queries
+
 use strict;
 use warnings;
 use POE;
 use POE::Component::Client::DNSBL;
 use POE::Component::IRC::Plugin qw[:ALL];
 use Net::IP qw[ip_is_ipv4];
-use vars qw($VERSION);
-
-$VERSION = '1.02';
 
 sub new {
   my $package = shift;
@@ -97,11 +96,16 @@ sub _response {
 
 1;
 
-__END__
+=pod
 
-=head1 NAME
+=begin Pod::Coverage
 
-POE::Component::IRC::Plugin::QueryDNSBL - A POE::Component::IRC plugin for IRC based DNSBL queries
+  PCI_register
+  PCI_unregister
+  S_public
+  S_msg
+
+=end Pod::Coverage
 
 =head1 SYNOPSIS
 
@@ -183,19 +187,10 @@ The bot replies to requests in the following form, when addressed:
 
 Of course, if you changed the C<command> in the constructor it will be something different to C<dns>.
 
-=head1 AUTHOR
-
-Chris C<BinGOs> Williams <chris@bingosnet.co.uk>
-
-=head1 LICENSE
-
-Copyright E<copy> Chris Williams.
-
-This program is free software; you can redistribute it and/or modify it under the same terms as Perl itself.
-
 =head1 SEE ALSO
 
 L<POE::Component::Client::DNSBL>
 
 L<http://en.wikipedia.org/wiki/DNSBL>
 
+=cut
