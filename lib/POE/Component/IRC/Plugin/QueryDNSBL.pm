@@ -7,7 +7,7 @@ use warnings;
 use POE;
 use POE::Component::Client::DNSBL;
 use POE::Component::IRC::Plugin qw[:ALL];
-use Net::IP qw[ip_is_ipv4];
+use Net::IP::Minimal qw[ip_is_ipv4];
 
 sub new {
   my $package = shift;
